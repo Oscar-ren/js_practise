@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+    <form>
+    <h2>限制只能输入数字</h2><br />
+	<input type="text" id="banInput1"/><br />
+	<h2>限制只能输入中文</h2><br />
+	<input type="text" id="banInput2"/><br />
+	<h2>HTML5实现</h2><br />
+	<input type="number" /><br />
+	<input type="text" id="banHTML" pattern=[0-9]/>
+	<input type="submit" value="提交"/>
+	</form>
+	<script type="text/javascript">
+	  window.onload = function() {
+	    var isPatternSupported = "pattern" in document.createElement("input");
+		console.log(isPatternSupported);
+	  
+	    var input1 = document.getElementById("banInput1"),
+	        input2 = document.getElementById("banInput2");
+		
+		input1.onkeyup = input1.onblur = function() {
+		  input1.value = input1.value.replace(/\D/g,"");
+		}
+		input2.onkeyup = input2.onblur = function() {
+		  input2.value = input2.value.replace(/[^\u4e00-\u9fa5]/g,"");
+		}
+	  }
+	</script>
+</body>
+</html>

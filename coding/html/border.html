@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>菜单实验</title>
+	<link rel="stylesheet" type="text/css" href="theme.css" />
+</head>
+<body>
+	<ul id="ulid">
+		<li>
+			<a href="" class="aid">第一菜单</a>
+			<div class="divid">
+				<a href="">1.1小菜单</a>
+				<a href="">1.2小菜单</a>
+				<a href="">1.3小菜单</a>
+			</div>
+		</li>
+		<li>
+			<a href="" class="aid">第二菜单</a>
+			<div class="divid">
+				<a href="">2.1小菜单</a>
+				<a href="">2.2小菜单</a>
+				<a href="">2.3小菜单</a>
+			</div>
+		</li>
+		<li>
+			<a href="" class="aid">第三菜单</a>
+			<div class="divid">
+				<a href="">3.1小菜单</a>
+				<a href="">3.2小菜单</a>
+				<a href="">3.3小菜单</a>
+			</div>
+		</li>
+	</ul>
+	
+</body>
+<script type="text/javascript">
+var m1=document.getElementsByClassName("aid");
+var k = document.getElementsByClassName('divid')
+var closeTime = 0;
+var timeout = 500;
+for(var i=0;i<m1.length;i++){
+	m1[i].i = i;
+	m1[i].onmouseover=function(){
+		var i = this.i;
+		k[i].style.display = "block";
+	}
+	
+
+	m1[i].onmouseout=function closediv(){
+		var i = this.i;
+		closeTime = window.setTimeout(timer,timeout);
+		function timer(){k[i].style.display="none";}
+	}
+	
+	k[i].onmouseover=function(){
+		if(closeTime){
+			window.clearTimeout(closeTime);
+			closeTime = null;
+		}	
+	}
+	k[i].i = i;
+	k[i].onmouseout=function(){
+		var i = this.i;
+		closeTime = window.setTimeout(timer,timeout);
+		function timer(){k[i].style.display="none";}
+	}
+}
+
+
+</script>
+</html>
+
+
+
+
+
+
+

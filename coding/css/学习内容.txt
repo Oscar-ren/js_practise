@@ -1,0 +1,115 @@
+css样式：
+	/*注释内容*/
+	
+字体与颜色：
+	font-family
+	font-size
+	font-weight
+	color
+	font-style
+
+背景样式：
+	background-color:#fff;
+	background-image:url();
+	background-repeat:no-repeat;
+	background-attachment:fixed;
+	background-position:left top;
+	background-position:x坐标 y坐标;
+
+文本：
+	text-decoration:none;	下划线|上划线|删除线|none
+	text-align:center;
+	line-height:50px;		行高，可以设置文字垂直居中100%
+	word-break:break-all;	碰到div右侧折行
+	letter-spacing:20px;	字间距
+	word-spacing:20px;		词间距
+
+
+
+
+1.鼠标光标属性
+2.边框属性
+3.列表样式
+4.尺寸样式
+5.textarea文本域
+6.样式继承
+7.表格样式
+8.定位样式
+9.外边距
+10.内边距
+11.布局样式
+12.漂浮
+13.滚动条
+14.显示与隐藏
+
+
+
+光标属性：
+	cursor:pointer(小手)|wait|help;
+
+边框属性：
+	border-left:5px solid #000;
+	border-style:
+	none|dotted|dashed|solid|double|inset|outset
+	
+列表样式：
+	ul{li};
+	dl{dt,dd};
+	list-style-type	列表前面图标样式
+
+尺寸属性：
+	min-width:
+	max-width:
+
+textarea文本域:
+	resize:none;	右下角不出现拖动图形
+	
+样式继承：(继承到文本)
+	font
+	color
+	text-align
+
+表格样式：
+	<table width="" border="">
+		<tr>
+			<td></td>
+		</tr>
+	</table>
+
+	table{
+		border-collapse:separate(独立)|collapse;
+		border-spacing:
+	}
+
+
+边距：
+	margin:上 右 下 左;(外边距)
+	margin:0px auto;
+	
+	padding:(写在外层里，内边距，用padding要改width height);
+
+
+定位：
+	position:absolute|relative;
+	1.相对定位
+		position:relative;
+		top:
+		left:
+	2.绝对定位
+		position:absolute:
+		top:
+		left：
+	3.z轴坐标
+		z-index:数值越大越在上方，支持负值
+	
+		
+漂浮：
+	float：left;
+
+
+
+
+布局：
+
+
+

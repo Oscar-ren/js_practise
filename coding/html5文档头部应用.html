@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<!-- 更加标准的简体中文，繁体中文是-Hant -->
+<html lang="zh-cmn-Hans">  
+<head>
+	<!-- 设置文档使用的字符编码 -->	
+	<meta charset="UTF-8">  
+	<!-- 优先使用IE最先版本和chrome -->
+	<meta http-equiv="X-UA-Compatible" content="IE-edge,chrome=1">
+	<!-- 浏览器内核控制 -->
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	<!-- 定义网页标题 -->
+	<title>Html5文档头部应用-meta标签详解</title>
+	
+	<!-- SEO优化 -->
+	<!-- 页面描述 -->
+	<meta name="description" content="不超过150个字符">
+	<!-- 页面关键词 -->
+	<meta name="keywords" content="HTML5头部,meta标签,link">
+	<!-- 定义网页作者 -->
+	<meta name="author" content="Oscar-ren,719704258@qq.com">
+	<!-- 定义网页搜索引擎索引方式
+		all:文件将被检索，且页面上的链接可以被查询;
+		none:文件将不被检索，且页面上的链接不可以被查询;
+		index:文件将被检索;
+		follow:页面上的链接可以被查询;
+		noindex:文件将不被检索;
+		nofollow:页面上的链接不可以被查询;
+	-->
+	<meta name="robots" content="index,follow">
+	
+	
+	<!-- 页面重定向和刷新，很容易被引擎视作误导而受到惩罚
+		<meta http-equiv="refresh" content="0;url=">
+	-->
+	
+	<!-- 为移动设备添加viewport -->
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+	<!-- width="device-width"自适应屏幕，但是会导致iPhone5添加到主屏后以WebAPP打开全屏模式出现黑边 -->
+	
+	<!-- 转码声明，避免被转码 -->
+	<meta http-equiv="Cache-Control" content="no-siteapp">
+	<!-- Android选项卡的颜色 -->
+	<meta name="theme-color" content="#db5945">
+	<!-- 添加favicon icon -->
+	<link rel="shortcut icon" type="image/x-icon" href="./YunTorrentFile.ico">
+	<!-- 收藏夹显示图标 -->
+	<link rel="Bookmark" type="image/x-icon" href="./YunTorrentFile.ico">
+	<meta http-equiv="Pragma" content="no-cache">
+	<link rel="stylesheet" href="./circle.css" />
+</head>
+<body>
+	<div class="circle"></div>
+</body>
+<script type="text/javascript">
+var bb = 1;
+function aa(bb) {
+    bb = 2;
+    alert(bb);
+};
+aa(bb);
+alert(bb);
+
+var cir = document.getElementsByClassName("circle")[0];
+function doSomething() { 
+    alert(this); 
+} 
+cir.onclick = function() {doSomething()};
+var _$te$t2 = "sss";
+doSomething();
+console.log(_$te$t2);
+</script>
+
+
+
+
+</html>

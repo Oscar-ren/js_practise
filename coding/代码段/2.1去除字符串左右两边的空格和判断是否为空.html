@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+  <form action="">
+    <input type="text" id="strs" value="  这是一个测试 "/>
+	<button type="button" id="strBtn">过滤</button><br />
+	<button type="button" id="isEmpty">验证输入是否为空</button>
+  </form>
+  <script type="text/javascript">
+    window.onload = function() {
+	  var strs = document.getElementById("strs"),
+	      btn = document.getElementById("strBtn"),
+		  _isEmpty = document.getElementById("isEmpty");
+	  
+	  btn.onclick = function() {
+	    //strs.value = strs.value.trim();
+		//else
+		strs.value = strs.value.replace(/^(\s|\u00A0)+|(\s|\u00A0)+$/g,"");
+	  }
+	  _isEmpty.onclick = function() {
+	    if(!strs.value.replace(/^(\s|\u00A0)+|(\s|\u00A0)+$/g,"")) {
+		  alert("您的输入为空！");
+		}else {
+		  alert("输入不为空");
+		}
+	  }
+	  
+	  //禁用表单
+	  //strs.disabled = true;
+	  //strs.readOnly = true;
+	}
+	
+  </script>
+</body>
+</html>

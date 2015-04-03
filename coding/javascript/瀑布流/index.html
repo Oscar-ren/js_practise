@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>瀑布流js特效</title>
+<script type="text/javascript" src="jquery-1.4.2.min.js"></script>
+<style type="text/css">
+*{margin:0px; padding:0px;}
+li{list-style:none;}
+
+div{width:1175px; height:auto; margin:20px auto;}
+
+ul{width:225px; overflow:hidden; margin:5px; float:left;}
+
+.up a{
+background-image:url(image/gotop.png);
+width:50px;
+height:50px;
+position:fixed;
+bottom:10px;
+right:20px;
+}
+
+.up a:hover{
+background-position:-51px,0px;
+}
+
+</style>
+	
+</head>
+<body>
+	<div class="uldiv">
+		<ul>
+			<li><img src="image/01.jpg" alt="" /></li>
+			<li><img src="image/02.jpg" alt="" /></li>
+			<li><img src="image/03.jpg" alt="" /></li>	
+		</ul>
+		<ul>
+			<li><img src="image/04.jpg" alt="" /></li>
+			<li><img src="image/05.jpg" alt="" /></li>
+			<li><img src="image/06.jpg" alt="" /></li>
+		</ul>
+		<ul>
+			<li><img src="image/07.jpg" alt="" /></li>
+			<li><img src="image/08.jpg" alt="" /></li>
+			<li><img src="image/09.jpg" alt="" /></li>
+		</ul>
+		<ul>
+			<li><img src="image/10.jpg" alt="" /></li>
+			<li><img src="image/11.jpg" alt="" /></li>
+			<li><img src="image/12.jpg" alt="" /></li>
+		</ul>
+		<ul>
+			<li><img src="image/13.jpg" alt="" /></li>
+			<li><img src="image/14.jpg" alt="" /></li>
+			<li><img src="image/15.jpg" alt="" /></li>
+		</ul>
+	</div>
+	<div class="up" style="display:none;"><a title="返回顶部" href="javascript:;" ></a></div>
+</body>
+<script type="text/javascript">
+$(document).ready(function(){
+	$(window).scroll(function(){
+		$(window).scrollTop()>150 ? $(".up").css('display','').click(function(){
+			$(window).scrollTop(0);	
+		}):$(".up").css('display','none');
+	})
+})
+
+
+</script>
+</html>

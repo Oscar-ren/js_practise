@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+	  .box {
+	    position: relative;
+	    width: 200px;
+		height: 200px;
+		border: 112px solid #000;
+	  }
+	  .box:before {
+		content: "";
+		position: absolute;
+		left: 200px;
+	    top: 18px;
+		border-color: transparent transparent transparent #000;
+		border-style: solid;
+		border-width: 10px;
+		z-index: -1;
+	  }
+	  .box:after {
+	    content: "";
+		position: absolute;
+		top: 20px;
+		left: 200px;
+		border-color: transparent transparent transparent #fff;
+		border-style: solid;
+		border-width: 8px;
+		z-index: 10;
+	  }
+	</style>
+</head>
+<body>
+	<div class="box"></div>
+	<script type="text/javascript">
+	  function unique(arr) {
+		var result = [], hash = {};
+		for (var i = 0, elem; (elem = arr[i]) != null; i++) {
+			if (!hash[elem]) {
+            result.push(elem);
+            hash[elem] = true;
+			}
+		}
+    return result;
+	}
+	var ar=[1,2,3,5,7,9,3,10,5];
+	var ary = unique(ar);
+	  console.log(ary);
+	</script>
+</body>
+</html>

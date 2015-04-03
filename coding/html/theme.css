@@ -1,0 +1,60 @@
+#ulid{
+margin:0 auto;
+padding:0;
+width:363px;
+height:31px;
+background:#000;
+}
+
+#ulid li{
+margin:0;
+padding:0;
+float:left;
+list-style:none;
+font: bold 20px ¿¬Ìå;
+}
+
+#ulid li a{
+display:block;
+margin: 0 1px 0 0;
+padding: 4px 10px;
+width:100px;
+background: #5970B2;
+color: #FFF;
+text-align: center;
+text-decoration: none
+}
+#ulid li a:hover{
+background:#323345;
+}
+
+
+
+#ulid div{
+margin:0;
+padding:0;
+display:none;
+position:absolute;
+border:1px solid #5970B2;
+}
+
+#ulid div a{
+display:block;
+background:#EAEBD8;
+width:auto;
+padding:0;
+margin:0;
+color: #2875DE;
+font-size:15px;
+}
+
+#ulid div a:hover{
+background:#49A3FF;
+color:#fff;}
+
+
+
+
+
+
+

@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+		.Absolute-Center {
+		width: 200px;
+		height:200px;
+		background-color:gray;
+		margin: auto;
+		position: absolute;
+		top: 0; left: 0; bottom: 0; right: 0;
+}
+	</style>
+</head>
+<body>
+	<div class="Absolute-Center"></div>
+	<div id="t"></div>
+	<script type="text/javascript">
+	  var t = document.getElementById("t");
+	  t.innerHTML += "\n";
+	  for(var i=1;i<=3;i++) {
+	    for(var j=1;j<=3-i;j++) {
+		  t.innerHTML += "&ensp;";
+		}
+		for(var h=1;h<=2*i;h++) {
+		  t.innerHTML += "*";
+		}
+		t.innerHTML+= "<br>";
+	  }
+	  for(var i=1;i<=2;i++) {
+	    for(var j=1;j<=i;j++) {
+		  t.innerHTML += "&ensp;";
+		}
+		for(var h=1;h<=6-2*i;h++) {
+		  t.innerHTML += "*";
+		}
+		t.innerHTML+="<br>";
+	  }
+	
+	</script>
+</body>
+</html>

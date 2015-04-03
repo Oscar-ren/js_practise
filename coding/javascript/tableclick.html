@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+	.powert,
+	.smartt,
+	.knowt {
+	  cursor:pointer;
+	}
+	</style>
+</head>
+<body>
+	<table id="table" border="1">
+	  <tr>
+	    <th class="name">姓名</th>
+	    <th class="powert">力量</th>
+	    <th class="smartt">敏捷</th>
+	    <th class="knowt">智力</th>
+	  </tr>
+	  <tr>
+	    <td class="name">德鲁伊</td>
+	    <td class="power">17</td>
+	    <td class="smart">24</td>
+	    <td class="know">13</td>
+	  </tr>
+	  <tr>
+	    <td class="name">月之骑士</td>
+	    <td class="power">15</td>
+	    <td class="smart">22</td>
+	    <td class="know">16</td>
+	  </tr>
+	  <tr>
+	    <td class="name">众神之王</td>
+	    <td class="power">19</td>
+	    <td class="smart">15</td>
+	    <td class="know">20</td>
+	  </tr>
+	  <tr>
+	    <td class="name">流浪剑客</td>
+	    <td class="power">23</td>
+	    <td class="smart">15</td>
+	    <td class="know">14</td>
+	  </tr>
+	</table>
+	<script type="text/javascript">
+	  var table = document.getElementById("table");
+	  var num = 0,  //power力量属性点击计数，为奇数则反转数组
+	      snum = 0, //smart敏捷属性点击计数
+		  knum = 0; //know智力属性点击计数
+		  
+	  function compare(a,b) {
+	    if(a.nodeType == 1&&b.nodeType == 1) {
+		  return b.firstChild.nodeValue - a.firstChild.nodeValue;  //返回从大到小
+		}else {
+		 return b-a;
+		}
+	  }
+
+	  function replaces(e) {
+	    var pows = document.getElementsByClassName(e);
+	    var pow = Array.prototype.slice.call(pows,0);  //ie8及更早版本不支持
+	    pow.sort(compare);
+		if((e == "power"&&num == 1) || (e == "smart"&&snum == 1) || (e == "know"&&knum == 1)) {
+		  pow.reverse();
+		}
+	    for(var i = 0;i<pow.length;i++) {
+	    //console.log(pow[i].firstChild.nodeValue);
+		table.lastChild.insertBefore(pow[i].parentNode,table.lastChild.lastChild);
+	    }
+	  }
+	  
+	  table.onclick = function() {
+	    //alert(event.target.className);
+	    switch(event.target.className) {
+		  case "powert":
+		    replaces("power");
+			if(num%2 == 0) {
+			  replaces("power");
+			  num++;
+			}else {
+			  replaces("power");
+			  num--;
+			}
+			console.log(num);
+			break;
+		  case "smartt":
+		    if(snum%2 == 0) {
+			  replaces("smart");
+			  snum++;
+			}else {
+			  replaces("smart");
+			  snum--;
+			}
+			console.log(snum);
+			break;
+		  case "knowt":
+		    if(knum%2 == 0) {
+			  replaces("know");
+			  knum++;
+			}else {
+			  replaces("know");
+			  knum--;
+			}
+			console.log(knum);
+			break;
+		}
+	  }
+	  console.log("5"+3);
+	  console.log("5"-3);
+	  //console.log(1+-+++-+1);	//报错
+	  var name = "World!";
+	  (function() {
+	    if(typeof name === "undefined") {
+		  var name = 'Jack';
+		  console.log('Goodbye' + name);
+		}else {
+		  console.log('Hello' + name);
+		}
+	  })()
+	  
+	  var _array = [];
+	  console.log(Math.pow(2,32));
+	  //console.log(_array.constructor(Math.pow(2,32)));	//超出了数组的长度
+	  console.log(Number.MAX_VALUE);
+	  var END = Math.pow(2,53);
+	  var START = END - 100;
+	  var count = 0;
+	  for(var i = START;i<END;i++) {
+	    count++;
+	  }
+	  console.log(count);
+	  
+	  var ary = [0,1,2];
+	  ary[10] = 10;
+	  console.log(ary[7]);
+	  var _ary = ary.filter(function(x) {return x === undefined;});
+	  console.log(_ary);
+	</script>
+</body>
+</html>

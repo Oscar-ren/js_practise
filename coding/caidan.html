@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>非常小巧的JS下拉菜单代码</title>
+<style>
+#sddm
+{	margin: 0 auto;
+	padding: 0;
+	background-color:#F4F4F4;
+	width:405px;
+	height:23px;}
+
+#sddm li
+{	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	font: bold 12px arial}
+
+#sddm li a
+{	display: block;
+	margin: 0 1px 0 0;
+	padding: 4px 10px;
+	width: 60px;
+	background: #5970B2;
+	color: #FFF;
+	text-align: center;
+	text-decoration: none}
+
+#sddm li a:hover
+{	background: #49A3FF}
+
+#sddm div
+{	position: absolute;
+	visibility: hidden;
+	margin: 0;
+	padding: 0;
+	background: #EAEBD8;
+	border: 1px solid #5970B2}
+#sddm div a
+	{	position: relative;
+		display: block;
+		margin: 0;
+		padding: 5px 10px;
+		width: auto;
+		white-space: nowrap;
+		text-align: left;
+		text-decoration: none;
+		background: #EAEBD8;
+		color: #2875DE;
+		font: 12px arial}
+
+	#sddm div a:hover
+	{	background: #49A3FF;
+		color: #FFF}
+</style>
+<!-- dd menu -->
+<script type="text/javascript">
+<!--
+var timeout = 500;
+var closetimer= 0;
+var ddmenuitem = 0;
+// open hidden layer
+function mopen(id)
+{	
+	// cancel close timer
+	mcancelclosetime();
+
+	// close old layer
+	if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+
+	// get new layer and show it
+	ddmenuitem = document.getElementById(id);
+	ddmenuitem.style.visibility = 'visible';
+
+}
+// close showed layer
+function mclose()
+{
+	if(ddmenuitem) ddmenuitem.style.visibility = 'hidden';
+}
+
+// go close timer
+function mclosetime()
+{
+	closetimer = window.setTimeout(mclose, timeout);
+}
+
+// cancel close timer
+function mcancelclosetime()
+{
+	if(closetimer)
+	{
+		window.clearTimeout(closetimer);
+		closetimer = null;
+	}
+}
+
+// close layer when click-out
+document.onclick = mclose; 
+// -->
+</script>
+</head>
+<body style="text-align:center">
+<ul id="sddm">
+	<li><a href="#" onmouseover="mopen('m1')" onmouseout="mclosetime()">主页</a>
+		<div id="m1" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+		<a href="#">最新更新</a>
+		<a href="#">热点排行</a>
+		<a href="#">推荐阅读</a>
+		</div>
+	</li>
+	<li><a href="#" onmouseover="mopen('m2')" onmouseout="mclosetime()">下载频道</a>
+		<div id="m2" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+		<a href="#">ASP源程序</a>
+		<a href="#">AJAX菜单</a>
+		<a href="#">DIV布局实例</a>
+		</div>
+	</li>
+	<li><a href="#" onmouseover="mopen('m3')" onmouseout="mclosetime()">文章资讯</a>
+		<div id="m3" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+		<a href="#">Visa相关</a>
+		<a href="#">Paypal相关</a>
+		</div>
+	</li>
+	<li><a href="javascript:;" onmouseover="mopen('m4')" onmouseout="mclosetime()">帮助中心</a>
+		<div id="m4" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+		<a href="javascript:;">下载帮助文档</a>
+		<a href="javascript:;">在线阅读</a>
+		</div>
+	</li>
+	<li><a href="javascript:;" onmouseover="mopen('m5')" onmouseout="mclosetime()">联系博主</a>
+		<div id="m5" onmouseover="mcancelclosetime()" onmouseout="mclosetime()">
+		<a href="javascript:;">E-mail</a>
+		<a href="javascript:;">在线提交</a>
+		<a href="javascript:;">博主官网</a>
+		</div>
+	</li>
+</ul>
+
+<div style="clear:both"></div>
+<p><p>非常小巧的JS下拉菜单代码，兼容：IE6+, Firefox 1.5+, Opera 8+, Safari 3+, Chrome 0.2+</p></p>
+</body>
+</html>

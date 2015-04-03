@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<form action="">
+	  <span>禁止输入</span><br />
+	  <input type="text" id="str" value="禁止输入的文本"/>
+	</form>
+	<script type="text/javascript">
+	  window.onload = function() {
+	    var hasfocus = document.implementation.hasFeature("FocusEvent","3.0");
+		
+		if(hasfocus) {
+		  var strs = document.getElementById("str");
+		  strs.onfocus = function() {
+		    strs.blur();
+		  }
+		}
+	  }
+	</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>伪类应用</title>
+	<style type="text/css">
+	  body {
+	    background-color: #e7e6e2;
+	  }
+	  h1 {
+	    text-align: center;
+		position: relative;
+		color: #444;
+		top: 80px;
+	  }
+	  .box {
+	    width: 50%;
+		height: 200px;
+		background-color: #fff;
+		margin: 40px auto;
+	  }
+	  .effect {
+	    position: relative;
+	    -webkit-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+       -moz-box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+        box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+	  }
+	  .effect:before,
+	  .effect:after {
+	    content: "";
+		z-index: -1;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 10px;
+		right: 10px;
+		background-color: #777;
+		-webkit-box-shadow: 0 0 20px #777;
+		-moz-box-shadow: 0 0 20px #777;
+		box-shadow: 0 0 20px #777;
+		border-radius: 10;
+	  }
+	  .effect:after {
+	    right: 10px;
+		left: auto;
+	    -webkit-transform: rotate(3deg);
+		transform: rotate(3deg);
+	  }
+	</style>
+</head>
+<body>
+	<div class="box effect">
+	  <h1>Effect</h3>
+	</div>
+</body>
+</html>

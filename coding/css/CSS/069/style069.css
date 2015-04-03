@@ -1,0 +1,213 @@
+/* 页面边框定位和基本设置 */
+/* ---------------------------------------- */
+body#css-zen-garden {
+  margin: 0;
+  padding: 0;
+  background: transparent url("pics/bg_garden2.jpg") no-repeat right top;
+  width: 100%;
+  height: 100%;
+}
+
+h1,
+h2 {
+  margin: 0;
+  text-indent: -1000px;
+  overflow: hidden;
+}
+
+h1 {
+  background: url("pics/header.gif") no-repeat center;
+  width: 100%;
+  height: 116px;
+  padding-top: 60px;
+}
+
+.extra1 {
+  background: transparent url("pics/edge_top_black.gif") repeat-x;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 20px;
+  left: 100%;
+  margin-left: -100%;
+}
+
+.extra2 {
+  background: url("pics/edge_bottom_black.gif") repeat-x;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+  left: 100%;
+  margin-left: -100%;
+}
+
+.extra3 {
+  background: url("pics/edge_left_black.gif") repeat-y;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 100%;
+  left: 100%;
+  margin-left: -100%;
+}
+
+body > div.extra4 {
+  background: url("pics/edge_right_black.gif") repeat-y;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 100%;
+  z-index: 3;
+
+}
+
+body > div.extra5 {
+  background: url("pics/platform.png") no-repeat;
+  position: fixed;
+  top: 180px;
+  right: 0;
+  width: 85px;
+  height: 184px;
+  z-index: 1;
+
+}
+
+/* 内容文字样式 */
+/* ------------------------------------------------------- */
+p {
+  font-size: 80%;
+  font-family: "Lucida Grande", Verdana, Arial, sans-serif;
+  line-height: 150%;
+}
+
+.intro a:link,
+.intro a:visited,
+.supporting a:link,
+.supporting a:visited {
+  font-weight: bold;
+  color: #003300;
+}
+
+.intro a:hover,
+.intro a:active,
+.supporting a:hover,
+.supporting a:active {
+  font-weight: bold;
+  color: navy;
+}
+
+.preamble,
+.supporting {
+  width: 53%;
+  margin-left: 40px;
+}
+
+.preamble h3,
+.supporting h3 {
+  font-family: Geneva,Arial,sans-serif;
+  color: #003300;
+  font-size: 1em;
+  padding: 0 0 5px 25px;
+  background: url("pics/bonsai.gif") no-repeat left top;
+  border-bottom: 1px dashed #000;
+}
+
+footer {
+  margin-top: 20px;
+  margin-bottom: 100px;
+}
+
+/* 定义summary段落样式 */
+/* ----------------------------------------------- */
+.summary {
+  width: 380px;
+  border-left: 1px dashed #000;
+  margin: -20px 0 25px 40px;
+  padding-left: 10px;
+  font-style: italic;
+}
+
+.summary p {
+  font-family: Georgia,serif;
+}
+
+/* 定义aside内容样式 */
+/* -------------------------------------------------- */
+ul {
+  padding-bottom: 15px;
+  margin: 0 0 0 -15px;
+}
+
+*html ul {
+  margin: 0 0 0 10px;
+}
+
+li {
+  list-style: none;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.wrapper {
+  position: absolute;
+  top: 270px;
+  right: 120px;
+  width: 200px;
+  color: #fff;
+  line-height: 130%;
+  font-size: .9em;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.wrapper h3 {
+  display: inline-block;
+  font-size: 0.8em;
+  position: relative;
+  top: -10px;
+  left: 30px;
+  margin: 0px;
+  text-align: center;
+  background-color: #000;
+  text-transform: lowercase;
+  padding: 5px 10px 5px 10px;
+}
+
+*html .wrapper h3 {
+  position: relative;
+  top: -10px;
+  left: 0;
+}
+
+.design-selection,
+.design-archives,
+.zen-resources {
+  background: url("pics/bg_black.gif") repeat;
+  margin-bottom: 30px;
+}
+
+.wrapper a {
+  display: block;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 80%;
+  color: #fff;
+  font-family: "Lucida Grande", Verdana, Arial, Helvetica, sans-serif;
+}
+
+.wrapper a:link {
+  text-decoration: none;
+}
+
+.wrapper a:hover {
+  text-decoration: underline;
+}
+
+.wrapper .designer-name {
+  display: inline;
+  color: #EBE2A8;
+  font-style: normal;
+  font-weight: bold;
+}

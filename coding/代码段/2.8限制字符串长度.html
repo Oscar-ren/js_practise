@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>限制字符串长度</title>
+</head>
+<body>
+	<h2>限制字符串长度</h2>
+	<span>通过 maxlength 设置</span><input type="text" maxlength="5"/><br />
+	<span>通过 js 设置</span><input type="text" id="maxlength" data-length="5"/>
+	<script type="text/javascript">
+	  window.onload = function() {
+	    var maxInput = document.getElementById("maxlength"),
+		    maxlength = maxInput.dataset.length|maxInput.getAttribute("data-length");
+		
+		maxInput.onkeyup = maxInput.onblur = function() {
+		  if(maxInput.value.length > maxlength) {
+		    maxInput.value = maxInput.value.substr(0,maxlength);
+		  }
+		}
+	  }
+	</script>
+</body>
+</html>

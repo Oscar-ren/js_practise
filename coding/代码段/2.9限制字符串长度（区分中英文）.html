@@ -1,0 +1,34 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>2.9节,限制字符串的长度</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script type="text/javascript" src="./strLen1.js"></script>
+</head>
+
+<body>
+<h2>符串长度限制（区分中英文）</h2>
+<input type="text" data-length='5' id='remainingCharacters'  data-model='Ch' name="remainingCharacters"/><br />
+<script type="text/javascript">
+    window.onload = function(){
+        var remainingCharacters = document.getElementById("remainingCharacters"),
+		    clearStr = function(e) {				//传入调用该函数的this值
+				var strval = e.value,
+					model = e.dataset.model,
+					datalen = e.dataset.length,
+					strlen = strLen(strval,model);	//调用外部strLen文件，返回计算后的输入字符串的长度，中文字符算两个
+				if(model == "Ch") {
+					var chinese = strval.match(/[\u4e00-\u9fa5]/g);
+					sublen = datalen - (chinese ? chinese.length: 0);	//重新计算需要截取的字符串长，因为中文字符算两个。比如输入了两个中文字符，strLen()返回4，则还可以输入1个英文字符，需要截取的字符串长度就为 datalen - 中文字符数 ：5-2=3
+				}
+				if(strlen > datalen) {
+					e.value = strval.substr(0,sublen);
+				}
+			}
+		remainingCharacters.onfocus = remainingCharacters.onblur = remainingCharacters.onkeyup = function() {
+			clearStr(this);
+		}
+		
+    };
+</script>
+</body>
+</html>

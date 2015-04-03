@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<h2>禁止复制粘贴剪切 copy paste cut事件</h2>
+	<input type="text" id="bancopy" value="这是一段文字，不可以使用自带复制粘贴功能，ie6+和主流浏览器适用"/>
+	<script type="text/javascript">
+	  window.onload = function() {
+	    var banCopy = document.getElementById("bancopy");
+		banCopy.oncopy = banCopy.onpaste = banCopy.oncut = function(event) {
+		  //return false;
+		  event.preventDefault();
+		  event.returnValue = false; //ie
+		}
+	  }
+	</script>
+</body>
+</html>

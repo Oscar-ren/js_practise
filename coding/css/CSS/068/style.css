@@ -1,0 +1,258 @@
+/* 基础元素样式 */
+/* ------------------------------------------------------------ */
+body#css-zen-garden {
+  margin: 0;
+  padding: 0;
+  font-family: Geneva, Arial, sans-serif;
+  background-color: black;
+}
+
+p {
+  font-size: 80%;
+}
+
+h3 {
+  margin: 0px;
+  text-indent: -1000px;
+  overflow: hidden;
+}
+
+a:link,
+a:visited {
+  color: olive;
+  text-decoration: none;
+}
+
+a:hover,
+a:active {
+  color: #99d0dd;
+  text-decoration: none;
+}
+
+a abbr {
+  cursor: help;
+}
+
+.summary a:link {
+  color: #99d0dd;
+  text-decoration: none;
+}
+
+.summary a:hover {
+  color: #c5a250;
+  
+}
+
+/* 首部样式设置，头部右上图片和居中文字 */
+/* ---------------------------------------------------------------------- */
+header h1,
+header h2 {
+  display:none;
+}
+
+.intro header {
+  background-image: url("pics/zen.jpg");
+  background-repeat: no-repeat;
+  background-position: top right;
+  width: 800px;
+  height: 216px;
+}
+
+.summary {
+  text-align: center;
+  color: white;
+  padding: 20px 80px 20px 295px;
+}
+
+/* 背景重复图样式 */
+/* --------------------------------------------------------------- */
+.page-wrapper {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  width: 800px;
+  background: transparent url("pics/fond.jpg") repeat top left;
+}
+
+.preamble,
+.explanation,
+.participation,
+.benefits {
+  background: transparent url("pics/fond4.jpg") repeat-y;
+  margin-left: 235px;
+  overflow: hidden;
+}/* 使用overflow解决外边距重叠问题 */
+
+.requirements {
+  background: transparent url("pics/fond5.jpg") repeat-y;
+  margin-left: 235px;
+  padding: 1px 0;
+}
+
+/* preamble,explanation,participation,benefits,requirements段落h3标签应用图片 */
+/* ----------------------------------------------------------------------------------------- */
+.preamble h3 {
+  background: transparent url("pics/road.jpg") no-repeat;
+  height: 106px;
+}
+
+.explanation h3 {
+  background: transparent url("pics/about.jpg") no-repeat;
+  height: 168px;
+}
+
+.participation h3 {
+  background: transparent url("pics/particip.jpg") no-repeat;
+  height: 154px;
+}
+
+.benefits h3 {
+  background: transparent url("pics/benef.jpg") no-repeat;
+  height: 171px;
+}
+
+.requirements h3 {
+  background: transparent url("pics/req.jpg") no-repeat;
+  height: 125px;
+}
+
+/* preamble,explanation,participation,benefits,requirements段落p标签样式 */
+/* ---------------------------------------------------------------------------------------- */
+.preamble p,
+.participation p,
+.requirements p {
+  text-align: justify;
+  margin: 5px 150px 0px 20px;
+}
+
+.explanation p,
+.benefits p {
+  text-align: justify;
+  margin: 5px 50px 0px 120px;
+}
+
+/* footer段落应用样式 */
+/* ----------------------------------------------------- */
+footer {
+  background: transparent url("pics/fin.jpg") no-repeat;
+  width: 536px;
+  height: 223px;
+  margin-left: 235px;
+}
+
+footer a {
+  position: relative;
+  top: 120px;
+  left: 40px;
+  margin-right: 6px;
+  text-decoration: underline;
+}
+
+footer a:link {
+  text-decoration: underline;
+}
+
+
+
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+/* -------------------菜单应用样式--------------------- */
+/* ---------------------------------------------------- */
+/* ---------------------------------------------------- */
+
+
+/* 小猫图片 and 菜单基础样式 */
+.sidebar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 80%;
+  background: transparent url("pics/chat.jpg") top left no-repeat;
+  width: 215px;
+  height: 156px;
+  padding: 160px 0 0 0;
+}
+
+ul {
+  background: #000;
+  margin: 25px 25px 15px 20px;
+  border: 2px solid olive;
+  padding: 0px;
+}
+
+li {
+  list-style: none;
+  margin-top: 10px;
+}
+
+
+
+/* design-selection样式 */
+.design-selection h3 {
+  background: transparent url("pics/select.jpg") no-repeat;
+  height: 76px;
+}
+
+.design-selection li {
+  color: #fff;
+  padding-left: 3px;
+  margin-bottom: 10px;
+}
+
+.design-selection a {
+  padding-left:10px;
+}
+
+.design-selection a.design-name {
+  text-transform: uppercase;
+  display: block;
+  padding-left: 30px;
+}
+
+.design-selection a.design-name:hover {
+  background: url("pics/puce.jpg") no-repeat 0 -4px;
+}
+
+/* design-archives样式 */
+.design-archives h3 {
+  background: transparent url("pics/archiv.jpg") no-repeat;
+  height: 76px;
+}
+
+.design-archives li {
+  margin-bottom: 15px;
+}
+.design-archives a {
+  margin: 0px;
+  padding: 10px 0 10px 20px;
+}
+.design-archives a:hover {
+  background: url("pics/puceherbe.jpg") no-repeat 0 4px;
+}
+
+
+/* zen-resources样式 */
+.zen-resources h3 {
+  background: transparent url("pics/resou.jpg") no-repeat;
+  height: 76px;
+}
+
+.zen-resources li {
+  margin-bottom: 15px;
+}
+
+.zen-resources a {
+  padding: 5px 0 15px 20px;
+}
+
+.zen-resources a:hover {
+  background: url("pics/puceparenth.jpg") no-repeat;
+}
+
+/* bottom图片 */
+.extra1 {
+  background: #b2906d url("pics/bas.jpg") no-repeat;
+  margin: 0 auto 30px auto;
+  width: 800px;
+  height: 119px;
+}

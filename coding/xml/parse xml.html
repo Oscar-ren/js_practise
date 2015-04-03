@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="zh-cmn-Hans">
+<head>
+	<meta charset="UTF-8">
+	<title>Parse XML</title>
+</head>
+<body>
+	<script type="text/javascript">
+	  var xmldoc = "<root>"
+				 + "<book>"
+				 + "<name>三体</name>"
+				 + "<author>刘慈欣</author>"
+				 + "</book>"
+				 + "</root>";
+	  /*
+	   javascript解析xml
+	   */
+	var parserXML = function(xmlData) {
+	
+	   if(typeof DOMParser != "undefined") {	//IE9,Chrome,Firfox,Safari,Opera
+	     xmldom = (new DOMParser()).parseFromString(xmldoc,"text/xml");
+		 var error = xmldom.getElementsByTagName("parsererror");
+		 if(error.length) {
+		   throw new Error("XML parsing error:" + error[0].textContent);
+		 }
+	   }else if(typeof ActiveXObject != "undefined") {	//IE
+	     var xmldom = new ActiveXObject("Microsoft.XMLDOM");
+		 xmldom.loadXML(xmldoc);
+		 if(xmldom.parseError != 0) {
+		   throw new Error("XML parsing error:" + xmldom.parseError.reason);
+		 }
+	   }else {
+	     throw new Error("can't parse the xml.");
+	   }
+	  return xmldom; 
+	}
+	   document.write(parserXML(xmldoc));
+	   console.log(parserXML(xmldoc).getElementsByTagName("author")[0].innerHTML);
+	</script>
+</body>
+</html>

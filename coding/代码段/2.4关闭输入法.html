@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+  <form action="">
+    <span>关闭输入法</span><br />
+	<input type="text" id="banInput"/>
+  </form>
+  <script type="text/javascript">
+    var ban = document.getElementById("banInput");
+	banInput(ban);
+	
+	
+	function banInput(element) {
+	  if(!(element instanceof Array)) {
+	    var arr = [element];
+	  }
+	  for(i = 0, arrlen = arr.length;i<arrlen;i++) {
+	    ban = arr[i];
+		ban.onfocus = function() {
+		  //利用css特殊样式 imeMode 关闭输入法，在Chrome中无效
+		  ban.style.imeMode = 'disabled';
+		}
+		
+		//适应主流浏览器，利用正则替换掉中文字符
+		function clearChinese(e) {
+		  e.value = e.value.replace(/[\u4e00-\u9fa5]/g,""); //正则代替中文字符
+		}
+		ban.onkeyup = function() {
+		  clearChinese(this);
+		}
+		ban.onblur = function() {
+		  clearChinese(this);
+		}
+	  }
+	  
+	  
+	  
+	}
+  </script>
+</body>
+</html>

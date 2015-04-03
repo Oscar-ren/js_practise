@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<input type="password" placeholder="请输入信息"/>
+	<input type="text" id="hintInput" data-hint="这里是提示信息"/>
+	<script type="text/javascript">
+	  window.onload = function() {
+	    var setCss = function(_this,cssOption) {
+		  if(!_this || _this.nodeType == 3 || _this.nodeType == 8 || !_this.style) {	//如果_this不是节点
+		    return;
+		  }
+		  for(var cs in cssOption) {
+		    _this.style[cs] = cssOption[cs];
+		  }
+		},
+		    hintInput = document.getElementById("hintInput"),
+		    hintmessage = hintInput.getAttribute("data-hint"),
+			_span = document.createElement("span");
+			_span.innerText = hintmessage;
+			
+			setCss(_span,{
+			  "position": "absolute",
+			  "left": hintInput.offsetLeft + 2 + "px",
+			  "top": hintInput.offsetTop + 4 + "px",
+			  "zIndex": 2,
+			  "color": "rgba(0,0,25	,0.5)",
+			  "fontSize": "small"
+					});-
+					
+					hintInput.parentNode.insertBefore(_span,hintInput);
+					
+					var onhint = function() {
+					  setCss(_span,{
+						"display": "none"
+					  });
+					  hintInput.focus();
+			}
+			
+			_span.onclick = hintInput.onfocus = onhint;		//获得焦点时，提示信息消失
+			
+			hintInput.onblur = function() {
+			  if(!hintInput.value.replace(/^(\s|\u00A0)+|(\s|\u00A0)+$/g,"")) {
+			    console.log("empty");
+			    setCss(_span,{
+				  "display": "block"
+				})
+			  } 
+			}		//文本框失去焦点时，如果文本框内无文字，显示提示信息
+	  }
+	</script>
+</body>
+</html>

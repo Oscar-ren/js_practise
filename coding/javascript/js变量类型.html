@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>index.html</title>
+	<style>
+		div{
+			width:300px;
+			height:200px;
+			background-color:#ccc;
+		}
+	</style>
+</head>
+<body>
+	<img id="imgid" src="a.jpg" width="200px" height="400px"/>	
+	<div id="did"></div>
+</body>
+	<script>											//js特效
+		var imgobj=document.getElementById("imgid");	//标签转成元素
+		imgobj.onclick=function(){
+			imgobj.style.display="none";
+		}
+	</script>
+	<script>			//数组定义方法
+		//var arr=new Array(1,2,3);
+		//alert(arr);
+	
+		//var arr=new Array();
+		//arr[0]="a";
+		//alert(arr);
+	
+		var arr=[1,2,3];
+		//alert(arr);
+		
+		//var arr=[];
+		//arr[0]="a";
+		//arr[1]="b";
+		//alert(arr);
+	</script>
+	<script>
+		//alert(window.document.documentElement);
+	
+		//var obj=new Object();
+		//alert(obj);
+		
+		var obj={				//json对象
+			"name":"user1",
+			"age":"30",
+			"sex":"male"
+		};
+		//alert(obj.name+"|"+obj.age);
+	</script>
+	<script>
+		var obj=NaN;
+		//alert(obj);
+	
+	
+	
+	</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+

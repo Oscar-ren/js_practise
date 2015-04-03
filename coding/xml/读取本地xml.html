@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html lang="zh-cmn-Hans">
+<head>
+	<meta charset="UTF-8">
+	<title>js加载xml文件</title>
+</head>
+<body>
+	<script type="text/javascript">
+	//------------------------------------------------------------------------
+	//Chrome下无效，chrome document对象没有load方法，无法加载xml文件，只能使用XHR获取，这里没写
+	//------------------------------------------------------------------------
+	  var xmlDoc = "game.xml";
+	  var xml="";
+	  var loadxml = function(xmldoc) {	//IE
+	    if(window.ActiveXObject) {
+		  var versions = ["MSXML2.DOMDocment.6.0","MSXML2.DOMDocment.3.0","MSXML2.DOMDocment"];
+		  for(var i=0;i<versions.length;i++) {
+		    try {
+			  xml = new ActiveXObject(version[i]);
+			} catch(e) {
+			  continue;
+			}
+			if(xml) break;
+			
+		  }
+		  xml.async = false;
+		  xml.load(xmldoc);
+		}else if(isFirefox=navigator.userAgent.indexOf("Firefox")>0) {	//Firfox
+		  xml = document.implementation.createDocument("","",null);
+		  xml.async = false;
+		  xml.load(xmldoc);
+		}else if(typeof XMLHttpRequest != "undefined") {		//先不考虑兼容性，适用于Chrome
+		  var xhr = new XMLHttpRequest();
+		  xhr.onreadystatechange = function() {
+		    if(xhr.readyState == 4) {
+			  if((xhr.status >= 200 && xhr.status <= 300) || xhr.status == 304) {
+			    xml = xhr.responseXML;
+			  }
+			}
+		  }
+		  xhr.open("get",xmldoc,false);
+		  xhr.send(null);
+		}else {
+		  throw new Error("Can't read the xml.");
+		}
+	  }
+	
+	  loadxml(xmlDoc);
+	  var _title = xml.getElementsByTagName("area");
+	  console.log(_title.length);
+	  for(var i=0;i<_title.length;i++) {
+	    document.write(_title[i].innerHTML);
+	  }
+	  
+	</script>
+</body>
+</html>

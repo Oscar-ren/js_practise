@@ -1,0 +1,146 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<canvas id="canid">Your browser does not support the canvas element.</canvas>
+</body>
+<script type="text/javascript">
+	function draw(id){
+		var canvas = document.getElementById(id);
+		canvas.width = 1340;
+		canvas.height = 1000;
+		if(canvas.getContext){
+			var context = canvas.getContext("2d");	
+			context.strokeStyle="rgba(255,0,0,0.4)";
+			context.strokeRect(0,0,200,200);					//透明度0.4的红色框
+			
+			
+			context.fillStyle ="green";
+			context.fillRect(220,0,200,200);						//绿色的方框
+			
+			context.clearRect(100,50,200,100);				//清楚区域
+			
+			context.beginPath();
+			context.arc(100,350,100,0,Math.PI/2,true);			//画圆和图形
+			
+			context.arc(220,450,50,0,Math.PI/2,false);
+			context.closePath();
+			context.strokeStyle = "rgba(0,255,0,0.7)";
+			
+			context.stroke();
+			
+			
+			context.strokeStyle="rgba(0,0,255,0.4)";				//重合方框
+			context.strokeRect(500,50,50,50);
+			context.strokeRect(525,75,50,50);
+			
+			
+			//画钟表
+			//表框
+			context.beginPath();
+			context.arc(400,350,100,0,Math.PI*2,true);
+			
+			context.moveTo(490,350);
+			context.arc(400,350,90,0,Math.PI*2,true);
+			
+			//表针
+			context.moveTo(400,350);
+			context.lineTo(400,285);
+			
+			context.moveTo(400,350);
+			context.lineTo(350,350);
+			
+			
+			context.stroke();
+			
+			//数字12
+			context.fillStyle = "#000";
+            context.font = " 20px sans-serif";
+			context.fillText("12",390,280);
+			
+			
+			//贝兹曲线与二次曲线
+			context.moveTo(600,50);
+			
+			context.bezierCurveTo(700,50,600,150,700,150);
+			context.stroke();
+			
+			context.strokeStyle = "rgba(0,255,0,0.4)";
+			context.strokeRect(600,50,100,100);
+			context.stroke();
+			
+			
+			//二次曲线
+			context.strokeStyle = "rgba(0,0,255,0.4)";
+			context.moveTo(800,50);
+			context.quadraticCurveTo(900,50,900,150);
+			context.stroke();
+			
+			
+			context.strokeStyle = "rgba(0,255,0,0.4)";
+			context.lineTo(800,50);
+			context.lineTo(900,50);
+			context.lineTo(900,150);
+			context.stroke();
+			
+			//渐变
+			var gradual = context.createLinearGradient(550,350,650,350);
+			
+			gradual.addColorStop(0,'rgb(255,0,0)');
+			gradual.addColorStop(0.5,'rgb(0,255,0)');
+			gradual.addColorStop(1,'rgb(0,0,255)');
+			
+			context.fillStyle = gradual;
+			context.fillRect(550,350,100,100);
+			
+			
+			
+			var gradual = context.createLinearGradient(550,200,650,300);
+			
+			gradual.addColorStop(0,'rgb(255,0,0)');
+			gradual.addColorStop(0.5,'rgb(0,255,0)');
+			gradual.addColorStop(1,'rgb(0,0,255)');
+			
+			context.fillStyle = gradual;
+			context.fillRect(550,200,100,100);
+			
+			
+			var g1 = context.createRadialGradient(600, 600, 0, 600, 600, 100);
+            g1.addColorStop(0.1, 'rgb(255,255,0)');
+			g1.addColorStop(0.3, 'rgb(255,0,255)');
+			g1.addColorStop(1, 'rgb(0,255,255)');
+            context.fillStyle = g1;
+			context.fillRect(500,500,100,100);
+			
+ 
+             //平移 缩放 旋转      
+			 context.fillRect(700, 600, 300, 300);
+			 context.fillStyle = "rgb(255,0,0)";
+			 context.translate(20,-20);
+			 context.rotate(-Math.PI/7);
+			 context.fillRect(800,700,100,100);
+			
+			
+			context.translate(0,850);
+			context.beginPath();
+			context.fillStyle='rgba(255,0,0,0.25)';
+			rad=18*Math.PI/90;
+			for(i=0;i<10;i++){
+			context.fillRect(0,0,100,100);
+			context.rotate(rad);
+			context.closePath();
+			}
+			context.fill();
+			 
+			
+		}
+	}
+	draw("canid");
+	
+
+
+</script>
+</html>

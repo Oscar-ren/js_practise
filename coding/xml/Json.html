@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html lang="zh-cmn-Hans">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE-edge,Chrome=1">
+	<title>js读取json</title>
+</head>
+<body>
+	<script type="text/javascript">
+	  var title = "6666";
+	  //IE 8+,Firefox 3.5+,Chrome,Safari 4+,Opera 13.5+
+	  //------------------------------------------------------------------------
+	  //早期浏览器可以使用shim://https://github.com/douglascrokford/JSON.js
+	  //------------------------------------------------------------------------
+	  var book ={
+				  title: "JS-Json",
+				  authors: [
+				    "Ren.Lion",
+					"Oscar"
+				  ],
+				  edition: 3,
+				  year: 2015,
+				  sayName: function() {
+				    alert(this.author);
+				  }
+				};
+	  var jsonText = JSON.stringify(book);	//将对象字面量转化为json
+	  console.log(jsonText);
+	  var bookCopy = JSON.parse(jsonText);	//将json转化为对象字面量
+	  console.log(bookCopy);
+	  console.log(bookCopy.title);
+	  
+	  //----------------------------------------------------------------------------
+	  //JSON.stringify()接受三个参数，js对象，过滤器和是否在JSON字符串中保留缩进
+	  //----------------------------------------------------------------------------
+	  console.log(JSON.stringify(book,["title","authors"]));	// {"title":"JS-Json","author":["Ren.Lion"]}
+	  
+	  //过滤器是函数的话，接受两个参数，属性（键）名和属性值    返回值是undefined时相应属性会被忽略
+	  var jsonFunc = JSON.stringify(book, function(key, value) {
+		  switch(key) {
+		    case "authors":
+			  return value.join(",");
+			case "year":
+			  return 5000;
+			case "edition":
+			  return undefined;
+			default:
+			  return value;
+		  }
+	  });
+	  console.log(jsonFunc);	//{"title":"JS-Json","authors":"Ren.Lion","year":5000}
+	  
+	  //JSON.stringify()第三个参数是缩进，数值型最大是10，还可以是字符串
+	  var jsonTab = JSON.stringify(book,null,1);
+	  console.log(jsonTab);
+	  var jsonTab2 = JSON.stringify(book,null,"--");
+	  console.log(jsonTab2);
+	  
+	  //toJSON()方法   使用stringify()函数后会优先调用toJSON()方法，如果没有返回对象本身
+	  var books =[{
+				  title: "JS-JSON",
+				  authors: "Ren.Lion",
+				  year: 2015,
+				  toJSON: function() {
+				    return undefined;
+				  }
+				}]
+	  console.log(JSON.stringify(books));
+	  
+	  //---------------------------------------------------------------------------------
+	  //JSON.parse()也可以接受两个参数，第二个参数是一个函数，还原函数，有两个参数，键和值
+	  //---------------------------------------------------------------------------------
+	  var book2 = {
+				    title: "JS-JSON",
+					authors: ["Ren.Lion"],
+					year: 2015,
+					releaseDate: new Date(2011, 1, 1)
+				  };
+	  var booksCopy = JSON.parse(JSON.stringify(book2),function(key,value) {
+		  if(key == "releaseDate") {
+		    return new Date(value);
+		  }else {
+		    return value;
+		  }
+		});
+	  console.log(booksCopy);
+	  alert(booksCopy.releaseDate.getFullYear());
+	  
+	</script>
+</body>
+</html>

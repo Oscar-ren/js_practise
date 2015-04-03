@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html lang="zh-cmn-Hans">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE-edge,Chrome=1">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+	  function createXHR() {
+		if(typeof XMLHttpRequest != "undefined") {		//IE8以上及主流浏览器
+		  return new XMLHttpRequest();
+		}else if(typeof ActiveXObject != "undefined") {
+	      if(typeof arguments.callee.activeXString != "string") {		//适用于IE7以前版本
+		    var version = ["MSXML2.XMLHTTP.6.0","MSXML2.XMLHTTP.3.0","MSXML2.XMLHTTP"];
+		    for(var i=0;i<version.length;i++) {
+		      try {
+			    new ActiveXObject(version[i]);
+			    arguments.callee.activeXString = version[i];
+			  }catch(e) {
+			    continue;
+			  }
+		    }
+		  }
+		  return new ActiveXObject(arguments.callee.activeXString);
+		}else {
+		  throw new Error("XHR can't available.");
+		}
+		
+	  }
+	  
+	  var xhr = createXHR();
+	  xhr.onreadystateChange = function() {
+	    if(xhr.readyState == 4) {
+		  if((xhr.status >= 200 && xhr.status <= 300) || xhr.status == 304) {
+		    console.log(xhr.responseText);
+		  }else {
+		    console.log("XHR was unsuccessful: " + xhr.status);
+		  }
+		}
+	  };
+	  xhr.open("get","example.php",true);
+	  xhr.send(null);
+	
+	  ajax({
+			  "url": "game.xml",
+			  
+			  "successCall": function(msg) {
+			    console.log(msg);
+			  },
+			  
+			  "failureCall": function(xhr,xhrstatus) {
+			    
+			  }
+	  
+	  });
+	  
+	  function ajax(options) {
+	    if(options && options.url) {
+		  alert(options.url);
+		}
+	  }
+	</script>
+</body>
+</html>

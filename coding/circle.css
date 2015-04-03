@@ -1,0 +1,126 @@
+@keyframes square-to-circle {
+  0% {
+	border-radius: 0 0 0 0;
+	background-color: coral;
+	transform: rotate(0deg);
+  }
+  25% {
+	border-radius: 50% 0 0 0;
+	background-color: darksalmon;
+	transform: rotate(45deg);
+  }
+  50% {
+	border-radius: 50% 50% 0 0;
+	background-color: indianred;
+	transform: rotate(90deg);
+  }
+  75% {
+	border-radius: 50% 50% 50% 0;
+	background-color: lightcoral;
+	transform: rotate(135deg);
+  }
+  100% {
+	border-radius: 50% 50% 50% 50%;
+	background-color: darksalmon;
+	transform: rotate(180deg);
+  }
+}
+
+@-moz-keyframes square-to-circle {
+  0% {
+	border-radius: 0 0 0 0;
+	background-color: coral;
+	transform: rotate(0deg);
+  }
+  25% {
+	border-radius: 50% 0 0 0;
+	background-color: darksalmon;
+	transform: rotate(45deg);
+  }
+  50% {
+	border-radius: 50% 50% 0 0;
+	background-color: indianred;
+	transform: rotate(90deg);
+  }
+  75% {
+	border-radius: 50% 50% 50% 0;
+	background-color: lightcoral;
+	transform: rotate(135deg);
+  }
+  100% {
+	border-radius: 50% 50% 50% 50%;
+	background-color: darksalmon;
+	transform: rotate(180deg);
+  }
+}
+
+@-webkit-keyframes square-to-circle {
+  0% {
+	border-radius: 0 0 0 0;
+	background-color: coral;
+	transform: rotate(0deg);
+  }
+  25% {
+	border-radius: 50% 0 0 0;
+	background-color: darksalmon;
+	transform: rotate(45deg);
+  }
+  50% {
+	border-radius: 50% 50% 0 0;
+	background-color: indianred;
+	transform: rotate(90deg);
+  }
+  75% {
+	border-radius: 50% 50% 50% 0;
+	background-color: lightcoral;
+	transform: rotate(135deg);
+  }
+  100% {
+	border-radius: 50% 50% 50% 50%;
+	background-color: darksalmon;
+	transform: rotate(180deg);
+  }
+}
+
+
+@-o-keyframes square-to-circle {
+  0% {
+	border-radius: 0 0 0 0;
+	background-color: coral;
+	transform: rotate(0deg);
+  }
+  25% {
+	border-radius: 50% 0 0 0;
+	background-color: darksalmon;
+	transform: rotate(45deg);
+  }
+  50% {
+	border-radius: 50% 50% 0 0;
+	background-color: indianred;
+	transform: rotate(90deg);
+  }
+  75% {
+	border-radius: 50% 50% 50% 0;
+	background-color: lightcoral;
+	transform: rotate(135deg);
+  }
+  100% {
+	border-radius: 50% 50% 50% 50%;
+	background-color: darksalmon;
+	transform: rotate(180deg);
+  }
+}
+	
+.circle {
+  position: absolute !important;
+  width: 200px;
+  height: 200px;
+  top: calc(50% - 100px);
+  left: calc(50% - 100px);
+  background-color: Coral;
+  animation: square-to-circle 2s .5s infinite ease alternate;
+  -webkit-animation: square-to-circle 2s .5s infinite ease alternate;
+  -ms-animation: square-to-circle 2s .5s infinite ease alternate;
+  -moz-animation: square-to-circle 2s .5s infinite ease alternate;
+  -o-animation: square-to-circle 2s .5s infinite ease alternate;
+}
