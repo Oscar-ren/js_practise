@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>仿写学校选择器</title>
+	<link rel="stylesheet" href="school-selector.css">
+	<script type="text/javascript" src="http://cdn.staticfile.org/jquery/1.7.2/jquery.min.js"></script>
+	<script src="school-list.js"></script>
+</head>
+<body>
+	<div class="school-box-wrapper">
+		<form action="">
+			<input type="text" name="" id="schoolName" readonly>
+			<input type="text" name="" id="schoolId" readonly>
+			<button id="button">点击出现</button>
+		</form>
+		<div class="school-box">
+			<div class="school-box-header">选择学校</div>
+			<div class="school-box-provinces">
+				<!-- <a href="javascript:void(0)" class="province-item" data-province="1">重庆</a> -->
+			</div>
+			<div class="school-box-schools">
+				<a href="javascript:void(0)" class="school-item" data-school="10611">重庆大学</a>
+				<a href="javascript:void(0)" class="school-item" data-school="10635">西南大学</a>
+			</div>
+		</div>
+	</div>
+	<script src="school-selector.js"></script>
+	<script>
+		var schoolBox = document.getElementsByClassName("school-box")[0];
+		var box_height = schoolBox.offsetHeight;
+		function hide() {
+			this.style.display = "none";
+		};
+		function show() {
+			this.style.display = "inline-block";
+		};
+		var button = document.getElementById("button");
+		button.onclick = function(event) {
+			event.preventDefault();
+			slidedown.call(schoolBox);
+		};
+		hide.call(button);
+
+		//slideup实现
+		var slideup = function() {
+			this.style.height = "0";
+		}
+
+		//slidedown实现
+		var slidedown = function() {
+			this.style.height = box_height + "px";
+		}
+	</script>
+</body>
+</html>

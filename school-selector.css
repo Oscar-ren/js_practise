@@ -1,0 +1,67 @@
+.school-box-wrapper {
+	margin: 30px 200px;
+}
+.school-box {
+	background-color: white;
+	width: 650px;
+	height: 302px;
+	overflow: hidden;
+	border: 1px solid #005EAC;
+	transition: height 500ms;
+	-webkit-transition: height 500ms;
+	-moz-transition: height 500ms;
+}
+.school-box-header {
+	background-color: #3777BC;
+	color: white;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 5px 10px;
+}
+.school-box-provinces,
+.school-box-schools {
+	margin: 10px 15px;
+	border: 1px solid #c3c3c3;
+}
+.school-box-provinces a,
+.school-box-schools a {
+	text-decoration: none;
+	cursor: pointer;
+	color: #005EAC;
+	font-size: 12px;
+}
+
+.school-box-provinces a {
+	height: 20px;
+	line-height: 20px;
+	margin-left: 5px;
+	padding: 3px; 
+}
+.school-box-provinces a:hover {
+	text-decoration: underline;
+}
+
+.school-box-schools {
+	height: 200px;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+.school-box-schools a {
+	display: inline-block;
+	width: 160px;
+	padding: 5px 20px 5px 10px;
+	margin: 5px;
+}
+.school-box-schools a:hover {
+	background-color: #005EAC;
+	color: white;
+}
+
+.school-box-provinces a.choose {
+	background-color: #005EAC;
+	color: white;
+}
+
+form {
+	margin: 0 10px 10px 0;
+}
